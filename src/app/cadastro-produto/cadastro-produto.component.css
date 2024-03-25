@@ -1,0 +1,46 @@
+.component1{
+
+    background-color: gray;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+}
+
+.component2{
+    background-color: rgb(48, 47, 47);
+    box-shadow: 0 4px 12px   black;
+    height: 500px;
+    width: 600px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+}
+
+.input1{
+    height: 25px;
+    width: 400px;
+    border-radius: 10px;
+    margin-left: 95px;
+    margin-top: 10px;  
+}
+
+.input2{
+    height: 100px;
+    width: 400px;
+    border-radius: 10px;
+    margin-left: 95px;
+    margin-top: 10px;  
+}
+
+#button{
+    width: 400px;
+    margin-left: 95px;
+    margin-top: 10px;
+}

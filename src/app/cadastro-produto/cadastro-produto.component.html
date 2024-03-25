@@ -1,1 +1,32 @@
-<p>cadastro-produto works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="component1">
+        <div class="component2">
+           <form [formGroup]="Forms">
+            <div>
+                <input class="input1" id="ID" placeholder="ID" type="number" for="ID" formControlName="ID" >
+                <input class="input1" id="nome" placeholder="Nome" type="string" for="nome" formControlName="nome" >
+                <textarea class="input2" id="descricao" placeholder="Descrição" for="descricao" formControlName="descricao"></textarea>
+                <input class="input1" id="preco" placeholder="preço" type="number" for="preco" formControlName="preco">
+                <input class="input1" id="quantidade" placeholder="Quantidade" type="number" for="quantidade" formControlName="quantidade">
+                <div class="d-grid gap-2" >
+                    <button class="btn btn-primary" type="button" id="button" (click)="botao()">Button</button>
+                
+                  </div>
+            
+            </div>
+        
+        
+        </form>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
