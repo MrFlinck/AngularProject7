@@ -2,6 +2,29 @@ import { Component, untracked } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Array } from '../array';
 
+
+interface Alert {
+	type: string;
+	message: string;
+}
+
+const ALERTS: Alert[] = [
+	{
+		type: 'success',
+		message: 'This is an success alert',
+	},
+
+	{
+		type: 'danger',
+		message: 'This is a danger alert',
+	},
+
+];
+
+
+
+
+
 @Component({
   selector: 'app-cadastro-produto',
   templateUrl: './cadastro-produto.component.html',
@@ -12,6 +35,8 @@ export class CadastroProdutoComponent {
   Forms : FormGroup; 
   Array: Array[] = []; 
   Array2:string[] = [];
+  alerts: Alert[]; // como inicializar aqui 
+  togglar = false
 
   /*
 
@@ -21,7 +46,14 @@ export class CadastroProdutoComponent {
   descricao:string = '' 
   preco: string = ''  
   quantidade: string = ''
+
+
+  
   */
+
+
+
+
 
   constructor(private formBuilder: FormBuilder){
     this.Forms  = formBuilder.group({
@@ -41,14 +73,28 @@ export class CadastroProdutoComponent {
           novoArray.push(item)
         }
       })
-      this.Array2 = novoArray.map(item => item.toString()) // está dando erro
+      this.Array2 = novoArray.map(item => item.toString()) 
       novoArray = []
       
     })
     
     console.log(this.Array2)
+    this.reset();
+
 
   }
+
+
+
+  
+
+  close(alert: Alert) {
+		this.alerts.splice(this.alerts.indexOf(alert), 1); // esta dando erro qui 
+	}
+
+  reset() {
+		this.alerts = Array.from(ALERTS);
+	}
 
 
 
@@ -62,9 +108,15 @@ export class CadastroProdutoComponent {
   
     console.log(this.Array2)
     console.log(this.Array2.length)
+    this.togglar = !this.togglar
 
     
 
   }
+
+  fechar(){
+    this.togglar = !this.togglar
+  }
+
 
 }

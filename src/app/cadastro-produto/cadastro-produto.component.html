@@ -15,10 +15,19 @@
                 <textarea class="input2" id="descricao" placeholder="Descrição" for="descricao" formControlName="descricao"></textarea>
                 <input class="input1" id="preco" placeholder="preço" type="number" for="preco" formControlName="preco">
                 <input class="input1" id="quantidade" placeholder="Quantidade" type="number" for="quantidade" formControlName="quantidade">
-                <div class="d-grid gap-2" >
-                    <button class="btn btn-primary" type="button" id="button" (click)="botao()">Button</button>
+                <div class="d-grid gap-2" *ngIf="Array2.length == 5">
+                    <button class="btn btn-primary" type="button" id="button" (click)="botao()">Salvar</button>
                 
                   </div>
+
+                <div id="component3" [ngClass]="{'transition' : togglar , 'transition2': !togglar}">
+                    <i class="bi bi-x-circle button2" (click)="fechar()" ></i>
+                    @for (alert of alerts; track alert) {
+                        <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+                    }
+                    <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+
+                </div>
             
             </div>
         
